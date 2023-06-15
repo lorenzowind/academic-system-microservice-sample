@@ -41,8 +41,8 @@ public class StudentController {
     }
 
     @GetMapping("/registration={registration}")
-    public ResponseEntity<StudentResponse> getStudentByRegistration(@PathVariable("registration") String name) {
-        StudentResponse studentResponse = studentService.getStudentByRegistration(name);
+    public ResponseEntity<StudentResponse> getStudentByRegistration(@PathVariable("registration") String registration) {
+        StudentResponse studentResponse = studentService.getStudentByRegistration(registration);
 
         if (studentResponse != null)
             return new ResponseEntity<>(studentResponse, HttpStatus.OK);

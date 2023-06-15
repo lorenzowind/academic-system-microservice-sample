@@ -26,10 +26,10 @@ public class StudentService {
     private final StudentRepository studentRepository;
 
     public StudentResponse createStudent(StudentRequest studentRequest) {
-        if (studentRepository.findByIdentification(studentRequest.getIdentification()).isPresent()) {
+        /*if (studentRepository.findByIdentification(studentRequest.getIdentification()).isPresent()) {
             log.error("StudentService.createStudent: Student already added : student identification = {}", studentRequest.getIdentification());
             return null;
-        }
+        }*/
 
         String registration = generateRegistration();
 

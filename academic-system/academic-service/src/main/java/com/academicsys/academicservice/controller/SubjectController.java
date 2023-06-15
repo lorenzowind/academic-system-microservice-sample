@@ -3,6 +3,7 @@ package com.academicsys.academicservice.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,9 +24,13 @@ public class SubjectController {
     private final SubjectService subjectService;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void createSubject(@RequestBody SubjectRequest subjectRequest) {
-        subjectService.createSubject(subjectRequest);
+    public ResponseEntity<SubjectResponse> createSubject(@RequestBody SubjectRequest subjectRequest) {
+        SubjectResponse subjectResponse = subjectService.createSubject(subjectRequest);
+
+        if (subjectResponse != null)
+            return new ResponseEntity<>(subjectResponse, HttpStatus.CREATED);
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @GetMapping
