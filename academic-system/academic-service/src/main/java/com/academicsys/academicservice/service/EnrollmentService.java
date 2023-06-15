@@ -36,7 +36,7 @@ public class EnrollmentService {
         }
 
         ResponseEntity<StudentResponse> studentResponse = webClient.get()
-                .uri("http://localhost:8081/api/student/registration=" + enrollmentRequest.getRegistration())
+                .uri("http://localhost:8082/api/student/registration=" + enrollmentRequest.getRegistration())
                 .retrieve()
                 .toEntity(StudentResponse.class)
                 .block();
