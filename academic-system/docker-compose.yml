@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  gateway-service:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    container_name: "academic-system-gateway-service"
+    ports:
+      - 8080:8080
+  academic-service:
+    build:
+      context: ./academic-service
+      dockerfile: Dockerfile
+    container_name: "academic-system-academic-service"
+    ports:
+      - 8081:8081
+  student-service:
+    build:
+      context: ./student-service
+      dockerfile: Dockerfile
+    container_name: "academic-system-student-service"
+    ports:
+      - 8082:8082
+  academic-service-mongo:
+    image: mongo:latest
+    container_name: "academic-system-academic-service-mongo"
+    ports:
+      - 27017:27017
+  student-service-mongo:
+    image: mongo:latest
+    container_name: "academic-system-student-service-mongo"
+    ports:
+      - 28017:28017
