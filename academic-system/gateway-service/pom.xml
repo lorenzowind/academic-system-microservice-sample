@@ -52,7 +52,7 @@
                     <target>1.8</target>
                     <archive>
                         <manifest>
-                            <mainClass>com.academic-service.ApiGatewayApplication</mainClass>
+                            <mainClass>com.academicsys.gatewayservice.ApiGatewayApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -69,7 +69,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.academic-service.ApiGatewayApplication</mainClass>
+                                    <mainClass>com.academicsys.gatewayservice.ApiGatewayApplication</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
